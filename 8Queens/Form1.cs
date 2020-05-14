@@ -13,12 +13,12 @@ namespace _8Queens
     public partial class Form1 : Form
     {
         Button[,] Spaces = new Button[8, 8];
-        Location queenplace;
+        Location queenplace;//where algorithm lives
         public Form1()
         {
-            InitializeComponent();
+           InitializeComponent();
            queenplace = new Location();
-            setBored();
+           setBoard();
         }
 
         private void RandomStart_Click(object sender, EventArgs e)
@@ -154,12 +154,9 @@ namespace _8Queens
             }
 
          }
-           
 
-        private void setBored()
+        private void setBoard()
         {
-
-            List<Button> buttons = new List<Button>();
             for (int col = 0; col < 8; col++)
             {
                 for (int row = 0; row < 8; row++)
@@ -177,18 +174,10 @@ namespace _8Queens
                     }
                     Spaces[col, row].Click += new EventHandler(testClick);
                     Spaces[col, row].Tag = "empty";
-                   newgrid.Controls.Add(Spaces[col, row]);
+                    newgrid.Controls.Add(Spaces[col, row]);
                 }
             }
-        }
-        private void testClick(object sender, EventArgs e) 
-        {
-            Button test = sender as Button;
-            int y = (test.Location.X-3)/50;
-            int x = (test.Location.Y-3)/50;
-            if (Spaces[x, y].Tag.ToString() == "empty")
-                setMap(x, y);
-        }
+        }   
         private void reset() 
         {
             for (int col = 0; col < 8; col++)
@@ -206,6 +195,14 @@ namespace _8Queens
                 }
 
             } 
+        }
+        private void testClick(object sender, EventArgs e)
+        {
+            Button test = sender as Button;
+            int y = (test.Location.X - 3) / 50;
+            int x = (test.Location.Y - 3) / 50;
+            if (Spaces[x, y].Tag.ToString() == "empty")
+                setMap(x, y);
         }
     }
 }

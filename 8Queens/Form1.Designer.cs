@@ -39,7 +39,7 @@
             this.RandomStart.Name = "RandomStart";
             this.RandomStart.Size = new System.Drawing.Size(141, 23);
             this.RandomStart.TabIndex = 0;
-            this.RandomStart.Text = "RandomStart";
+            this.RandomStart.Text = "Restart";
             this.RandomStart.UseVisualStyleBackColor = false;
             this.RandomStart.Click += new System.EventHandler(this.RandomStart_Click);
             // 
