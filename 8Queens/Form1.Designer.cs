@@ -28,20 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.RandomStart = new System.Windows.Forms.Button();
             this.newgrid = new System.Windows.Forms.FlowLayoutPanel();
+            this.Randoms = new System.Windows.Forms.Button();
+            this.buttonReset = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // RandomStart
-            // 
-            this.RandomStart.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.RandomStart.Location = new System.Drawing.Point(2, 12);
-            this.RandomStart.Name = "RandomStart";
-            this.RandomStart.Size = new System.Drawing.Size(141, 23);
-            this.RandomStart.TabIndex = 0;
-            this.RandomStart.Text = "Restart";
-            this.RandomStart.UseVisualStyleBackColor = false;
-            this.RandomStart.Click += new System.EventHandler(this.RandomStart_Click);
             // 
             // newgrid
             // 
@@ -51,23 +41,44 @@
             this.newgrid.Size = new System.Drawing.Size(401, 405);
             this.newgrid.TabIndex = 2;
             // 
+            // Randoms
+            // 
+            this.Randoms.Location = new System.Drawing.Point(2, 44);
+            this.Randoms.Name = "Randoms";
+            this.Randoms.Size = new System.Drawing.Size(141, 23);
+            this.Randoms.TabIndex = 3;
+            this.Randoms.Text = "Random Start";
+            this.Randoms.UseVisualStyleBackColor = true;
+            this.Randoms.Click += new System.EventHandler(this.randomStart);
+            // 
+            // buttonReset
+            // 
+            this.buttonReset.Location = new System.Drawing.Point(2, 82);
+            this.buttonReset.Name = "buttonReset";
+            this.buttonReset.Size = new System.Drawing.Size(141, 23);
+            this.buttonReset.TabIndex = 4;
+            this.buttonReset.Text = "Restart board";
+            this.buttonReset.UseVisualStyleBackColor = true;
+            this.buttonReset.Click += new System.EventHandler(this.RestartButton);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(917, 543);
+            this.Controls.Add(this.buttonReset);
+            this.Controls.Add(this.Randoms);
             this.Controls.Add(this.newgrid);
-            this.Controls.Add(this.RandomStart);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "8 Queens";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button RandomStart;
         private System.Windows.Forms.FlowLayoutPanel newgrid;
+        private System.Windows.Forms.Button Randoms;
+        private System.Windows.Forms.Button buttonReset;
     }
 }
 
